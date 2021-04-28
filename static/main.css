@@ -1,0 +1,108 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* ------ variables ---------*/
+
+:root{
+    --purple:       #242130;
+    --light-purple: #65636e;
+    --red:          #eb1736;
+    --brown:        #443937;
+    --border-color: #AF9FC9
+}
+
+body{
+    background-color: var(--purple);
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color: var(--red);
+}
+
+/* ------ HEADER ------- */
+
+
+
+header, nav, ul, li{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+} 
+
+header{
+    background-color: var(--red);
+    padding: 4vh 0; 
+}
+
+ul{
+    margin-right:20px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    padding:0 10px;
+}
+
+li a{
+    text-decoration:none;
+    color: var(--brown);
+    font-size: 24px;
+    font-weight: 600;
+    
+}
+
+li a:hover{
+    background-color: white;
+}
+
+/* ------ Content ------- */
+
+.content{
+    margin: 10vh 0 15vh 10vw;
+}
+
+.post{
+    width: 60%;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 2vh 1vw;
+    margin-top: 5vh;
+}
+
+.post-header{
+    display: flex;
+    color: var(--light-purple);
+}
+
+.post-header a{
+    padding: 0 10px;
+}
+
+.name{
+    font-weight: 600;
+    color: white;
+}
+
+/* ------ footer ------- */
+
+footer{
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    border-top: 2px solid var(--red);
+}
+
