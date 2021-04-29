@@ -28,8 +28,11 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash(f"Signed in as {form.username.data}!", "success")
-        return redirect(url_for("home"))
+        if form.username.data == "admin" and form.password.data == "admin"[::-1]:
+            flash(f"Signed in as {form.username.data}!", "success login-feedback")
+            return redirect(url_for("home"))
+        else:
+            flash(f"Incorrect user or password!", "fail login-feedback")
     return render_template("login.html", title="Sign in wannabe account", form=form)
     
         

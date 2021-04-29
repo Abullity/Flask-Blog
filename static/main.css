@@ -95,6 +95,21 @@ header{
     padding: 10px;
 }
 
+
+.login-feedback{
+    border: 1px solid var(--success-txt);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.alert-fail{
+    border: 1px solid var(--invalid-txt);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--invalid-bg);
+    color: var(--invalid-txt);
+}
+
 .is-invalid{
     box-shadow: 0 0 10px var(--invalid-bg);
 }
