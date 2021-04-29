@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>Create Wannabe Account</legend>
+            <div class="form-group">
+                {{ form.username.label(class="form-element") }}
+                {% if form.username.errors %}
+                    {{ form.username(class="form-element is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span class="form-element">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username(class="form-element") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.email.label(class="form-element") }}
+                {% if form.email.errors %}
+                    {{ form.email(class="form-element is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span class="form-element">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="form-element") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class="form-element") }}
+                {% if form.password.errors %}
+                    {{ form.password(class="form-element is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span class="form-element">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.password(class="form-element") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.confirm_password.label(class="form-element") }}
+                {% if form.confirm_password.errors %}
+                    {{ form.confirm_password(class="form-element is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.confirm_password.errors %}
+                            <span class="form-element">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.confirm_password(class="form-element") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div>
+            {{ form.submit(class="form-element button") }}
+        </div>
+    </form>
+    <div>
+        <small>
+            Already have an account? <a class="highlighted-text" href="{{ url_for('login') }}">Sign in</a>
+        </small>
+    </div>
+{% endblock %}
