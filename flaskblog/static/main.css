@@ -18,7 +18,7 @@
     --success-bg:   rgba(50,205,50, 0.2);
     --success-txt:  #75ff1a;
     
-    --invalid-bg:   rgba(255,77,77,1);
+    --invalid-bg:   rgba(255,77,77, 0.2);
     --invalid-txt:  rgb(255,25,25);
 }
 
