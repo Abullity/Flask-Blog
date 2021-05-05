@@ -20,6 +20,9 @@
     
     --invalid-bg:   rgba(255,77,77, 0.2);
     --invalid-txt:  rgb(255,25,25);
+    
+    --info-bg:      rgba(0, 0, 230, 02);
+    --info-txt:     rgb(0, 0, 204);
 }
 
 body{
@@ -111,7 +114,15 @@ header{
 }
 
 .is-invalid{
-    box-shadow: 0 0 10px var(--invalid-bg);
+    box-shadow: 0 0 10px var(--invalid-txt);
+}
+
+.info{
+    border: 1px solid var(--info-txt);
+    border-radius: 5px;
+    background-color: var(--info-bg);
+    color: var(--info-txt);
+    font-size: 14px;
 }
 
 .invalid-feedback{

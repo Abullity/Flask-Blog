@@ -20,8 +20,13 @@
             <nav>
             <div class="account flex">
                 <ul class="account flex">
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% if current_user.is_authenticated%}
+                        <li><a href="{{ url_for('account') }}"">Account</a></li>
+                        <li><a href="{{ url_for('logout') }}"">Log out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                    {% endif%}
                 </ul> 
             </div>
         </header>
