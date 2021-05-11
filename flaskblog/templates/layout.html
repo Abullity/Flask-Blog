@@ -2,8 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
         <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/icon type">
+       
         {% if title %}
             <title>{{ title }}</title>
         {% else %}
@@ -12,31 +15,32 @@
     </head>
     <body>
         <header>
-            <nav class="account flex"> 
+            <nav class="flex"> 
                 <ul class="menu flex">
-                    <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a class="logo" href="{{ url_for('home') }}">Wannabe Twitter</a></li>
                 </ul>                    
-            <nav>
-            <div class="account flex">
+            </nav>
+            <div class="account-menu account flex">
                 <ul class="account flex">
-                    {% if current_user.is_authenticated%}
+                    {% if current_user.is_authenticated %}
                         <li><a href="{{ url_for('account') }}"">Account</a></li>
                         <li><a href="{{ url_for('logout') }}"">Log out</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
                     {% else %}
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
-                    {% endif%}
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                    {% endif %}
                 </ul> 
             </div>
         </header>
         <div class="main-body">
-            <div class="content sidebar left">
+            <div class="content sidebar sidebar-left">
             </div>
             <div class="content main">
                 {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
-                        {% for category, message in messages%}
+                        {% for category, message in messages %}
                             <div class="alert alert-{{ category }}">
                                 {{ message }}
                             </div>
@@ -45,7 +49,10 @@
                 {% endwith %}
                 {% block body %} {% endblock %}
             </div>
-            <div class="content sidebar right">
+            <div class="content sidebar sidebar-right">
+                <ul class="sidebar-menu">
+                    <li><a class="make-post" href="{{ url_for('new_post') }}">Create Post</a></li>
+                </ul>
             </div> 
         </div>
         <footer>

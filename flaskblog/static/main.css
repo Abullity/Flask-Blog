@@ -44,6 +44,7 @@ a{
 
 header{
     position: fixed;
+    display: flex;
     top: 0;
     width: 100%;
     height: 60px;
@@ -56,28 +57,38 @@ header{
 }
 
 .flex li{
-    padding: 0 10px;
+    padding: 0 10px 0 0;
+    font: 600 20px 'Itim', cursive;
     
 }
 
 .flex a{
     color: white;
+} 
+
+.account-menu li{
+    margin: 0 5px;
 }
 
 /* -------- main content ----------- */
 
-.sidebar{
-    width: 200px;
+.sidebar-left{
+    width: 9vw;
     height: 100%;
 }
 
+.sidebar-right{
+    width: 10vw;
+    height: 100%;
+}
+
+.main-body{
+    display: flex;
+}
+
 .main{
-    width: calc(100% - 450px);
-    padding: 10px;
-    /*
-    border-right: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
-    */
+    width: calc(100% - 32vw);
+
 }
 
 .content{
@@ -86,7 +97,17 @@ header{
     height: 100%;
 }
  
+.sidebar-menu{
+    color: white;
+    margin-top: 80px;
+    list-style-type: none;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+}
 
+.make-post{
+    color: white;
+}
 
 /* -------- Forms ----------- */
 
@@ -113,6 +134,10 @@ header{
     color: var(--invalid-txt);
 }
 
+.picture-error{
+    color: var(--invalid-txt);
+}
+
 .is-invalid{
     box-shadow: 0 0 10px var(--invalid-txt);
 }
@@ -132,6 +157,7 @@ header{
 
 .form-element{
     margin: 10px 30%;
+    display: block;
 }
 
 .form-group{
@@ -140,6 +166,14 @@ header{
 
 .highlighted-text{
     color: var(--red)
+}
+
+.update-account{
+    border: none;
+}
+
+.update-account .form-element{
+    margin: 0;
 }
 
 /* --------- posts --------- */
@@ -155,25 +189,95 @@ header{
     color: var(--light-purple);
 }  
 
-.name{
+.post-title{
     color: white;
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+#date{
+    margin-left: 10px;   
+}
+
+#user{
+    color: var(--light-purple); 
+}
+
+#user:hover{
+    color: white;
+}
+
+.edit-post{
+    padding: 10px 5px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+}
+
+.edit-post a{
+    color: white;
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.update-post:hover{
+    color: orange;
+}
+
+.delete-post{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	font-weight: 600;
+    padding-left: 5px;
+}
+
+.delete-post:hover{
+    color: red;
+}
+/* --------- Profile -------- */
+
+.content-block{
+    border: 2px solid var(--light-purple);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+
+.update-account legend{
+    font-size: 24px;
     font-weight: 600;
 }
 
-.username{
-    margin: 0 10px;
-    color: var(--light-purple);
+.user-parts{
+    display: flex;
+    
 }
 
-.username:hover{
-    color: white;
-}   
+.image{
+    width: 30%;
+    margin-right: 40px;
+}
+
+
+.user_image{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
 
 /* --------- FOOTER -------- */
 footer{
-    position: relative;
+    position: fixed;
+    text-align: center;
     bottom: 0;
     border-top: 2px solid var(--red);
+    height: 50px;
+    background-color: var(--purple);
     width: 100%;
     
 }

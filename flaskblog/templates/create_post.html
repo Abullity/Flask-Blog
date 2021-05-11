@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset>
+            <legend>{{ legend }}</legend>
+            <div class="form-group">
+                {{ form.title.label(class="form-element") }}
+                {% if form.title.errors %}
+                    {{ form.title(class="form-element is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                            <span class="form-element">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-element") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.post_content.label(class="form-element") }}
+                {% if form.post_content.errors %}
+                    {{ form.post_content(class="form-element is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.post_content.errors %}
+                            <span class="form-element">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.post_content(class="form-element") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="form-element button") }}
+        </div>
+    </form>
+
+{% endblock %}
