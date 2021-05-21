@@ -4,7 +4,7 @@
         <div class="post-header">
             <p class="post-title">{{ post.title }}</p>
             <small>Posted by:</small>
-            <a href=# id="user">@{{ post.author.username }}</a>
+            <a href="{{ url_for('user_posts', username=post.author.username) }}" id="user">@{{ post.author.username }}</a>
             <a id="date">{{ post.date_posted.strftime('%Y-%m-%d') }}</a>
         </div>
         <p class="post-content">{{ post.content}}</p>
