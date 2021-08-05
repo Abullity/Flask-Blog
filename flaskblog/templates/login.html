@@ -36,7 +36,7 @@
                 {{ form.remember.label() }}
             </div>
             <small>
-                <a href=# class="highlighted-text form-group form-element">Forgot a password?</a>
+                <a href="{{ url_for('reset_request') }}" class="highlighted-text form-group form-element">Forgot a password?</a>
             </small>
         </fieldset>
         <div class="form-group">

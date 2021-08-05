@@ -22,15 +22,15 @@
             </nav>
             <div class="account-menu account flex">
                 <ul class="account flex">
+                	<li><a href="{{ url_for('new_post') }}">Publish</a></li>
                     {% if current_user.is_authenticated %}
                         <li><a href="{{ url_for('account') }}"">Account</a></li>
-                        <li><a href="{{ url_for('logout') }}"">Log out</a></li>
-                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('logout') }}"">Log out</a></li>        
                     {% else %}
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                         <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <li><a href="{{ url_for('about') }}">About</a></li>
                     {% endif %}
+                    <li><a href="{{ url_for('about') }}">About</a></li>
                 </ul> 
             </div>
         </header>
@@ -50,9 +50,6 @@
                 {% block body %} {% endblock %}
             </div>
             <div class="content sidebar sidebar-right">
-                <ul class="sidebar-menu">
-                    <li><a class="make-post" href="{{ url_for('new_post') }}">Create Post</a></li>
-                </ul>
             </div> 
         </div>
         <footer>
